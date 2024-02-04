@@ -8,9 +8,9 @@ $\(r, \phi, z)$
 
 Where:
 
-Hue = $\\phi$
-Saturation = $\r$  
-Luminosity = $\z$ 
+Hue = $\\phi$  
+Saturation = r  
+Luminosity = z
 
 Expressing movements in this system is obviously highly intuitive and very useful for artists who think in terms of the colour wheel. It is eminently programmable.
 
