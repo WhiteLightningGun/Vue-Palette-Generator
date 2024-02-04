@@ -1,0 +1,85 @@
+.open-sans-bold {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+p,
+a {
+  font-family: "Open Sans", serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.bitter-regular {
+  font-family: "Bitter", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.lora-regular {
+  font-family: "Lora", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.colour-console {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.d-flex .color-holder {
+  display: flex;
+  align-items: center; /* aligns items vertically in the center */
+  justify-content: center; /* centers items horizontally */
+  min-width: 200px; /* adjust as needed */
+  width: 10vw;
+  height: 10vw;
+  min-height: 200px;
+  text-align: center;
+}
+
+.d-flex .color-result {
+  display: flex;
+  align-items: center; /* aligns items vertically in the center */
+  justify-content: center; /* centers items horizontally */
+  max-width: 200px;
+  max-height: 200px;
+  width: 17vw;
+  height: 17vw;
+  text-align: center;
+  font-size: calc(min(max(10px, 3vw), 20px));
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
+  justify-content: center; /* or space-between */
+}
+
+.grid-item {
+  background-color: #f1f1f1;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 600px) {
+  .grid-item {
+    padding: 10px;
+  }
+}
