@@ -1,12 +1,16 @@
 I made this so that I would have an excuse to use Vue just for a change.
 
-It generates colour palettes that may be of interest for artists who are endeavouring to create a balanced colour scheme. This gave me a chance to use my mathematical modelling skills - a colour gamut can be expressed as set of locations on an abstract vector space. In this case, that's the HSL colour space, which obviously maps to the cylindrical coordinate system:
+It generates colour palettes that may be of interest for artists who are endeavouring to create a balanced colour scheme. This gave me a chance to use my mathematical modelling skills...
 
-$\(r, phi, z)$
+A colour gamut can be expressed as set of locations in an abstract vector space. In this case, that's the HSL colour space, which obviously maps to the cylindrical coordinate system:
 
-H = Phi
-S = Radius
-L = z
+$\(r, \phi, z)$
+
+Where:
+
+Hue = Phi  
+Saturation = Radius  
+Luminosity = z
 
 Expressing movements in this system is obviously highly intuitive and very useful for artists who think in terms of the colour wheel. It is eminently programmable.
 
