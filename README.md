@@ -1,3 +1,5 @@
+Now live: https://whitelightninggun.github.io/Vue-Palette-Generator/
+
 I made this so that I would have an excuse to use Vue just for a change.
 
 It generates colour palettes that may be of interest for artists who are endeavouring to create a balanced colour scheme. This gave me a chance to use my mathematical modelling skills...
