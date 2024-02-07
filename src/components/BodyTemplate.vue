@@ -21,7 +21,7 @@
       v-bind:class="animationSetting"
     >
       <div v-for="(col, index) in colourArray" :key="index">
-        <ColourSwatch :colour="col" />
+        <ColourSwatch :colour="col" :swatchCount="colourArray.length" />
       </div>
     </div>
   </main>
