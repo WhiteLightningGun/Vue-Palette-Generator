@@ -9,11 +9,11 @@
     </div>
     <colourPicker @colour-changed="handlecolourChange" />
     <div class="container text-center">
-      <h4 class="mt-5">
+      <h5 class="mt-5">
         <i class="bi bi-caret-left" v-on:click="handleClick('left')"></i>
         <span class="palette-text">{{ currentPaletteName }}</span>
         <i class="bi bi-caret-right" v-on:click="handleClick('right')"></i>
-      </h4>
+      </h5>
     </div>
 
     <div
