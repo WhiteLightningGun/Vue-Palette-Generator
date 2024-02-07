@@ -2,13 +2,13 @@
   <div class="container d-flex justify-content-center">
     <h4 class="mt-5">
       <span
-        class="color-holder rounded"
-        :style="{ 'background-color': color }"
-        v-bind:class="textColor"
-        ref="colorPicker"
-        @click="openColorPicker"
+        class="colour-holder rounded"
+        :style="{ 'background-color': colour }"
+        v-bind:class="textcolour"
+        ref="colourPicker"
+        @click="opencolourPicker"
       >
-        <span class="colour-console" id="current-colour"> {{ color }}</span>
+        <span class="colour-console" id="current-colour"> {{ colour }}</span>
       </span>
     </h4>
   </div>
@@ -20,15 +20,15 @@ export default {
   name: "ColourPicker",
   data() {
     return {
-      color: "", // Gets new random color
-      textColor: "text-white",
+      colour: "",
+      textcolour: "text-white",
     };
   },
   mounted() {
     // eslint-disable-next-line no-undef
-    this.colorPicker = new jscolor(this.$refs.colorPicker, {
-      onInput: this.updateColor,
-      onChange: this.updateColorState,
+    this.colourPicker = new jscolor(this.$refs.colourPicker, {
+      onInput: this.updatecolour,
+      onChange: this.updatecolourState,
       width: 250,
       height: 200,
       borderColor: "#000",
@@ -38,39 +38,39 @@ export default {
       smartPosition: true,
       zIndex: 1000,
     });
-    this.colorPicker.fromString(this.color);
+    this.colourPicker.fromString(this.colour);
   },
   created() {
-    this.color = `#${Math.floor(Math.random() * 16777215)
+    this.colour = `#${Math.floor(Math.random() * 16777215)
       .toString(16)
       .toUpperCase()}`;
-    this.updateColorState(); //inform the parent of the initial color
-    this.checkTextColor(this.color); //check the initial color for text color
+    this.updatecolourState(); //inform the parent of the initial colour
+    this.checkTextcolour(this.colour); //check the initial colour for text colour
   },
   methods: {
-    openColorPicker() {
-      this.colorPicker.show();
+    opencolourPicker() {
+      this.colourPicker.show();
     },
-    updateColor() {
-      this.color = this.colorPicker.toHEXString();
-      // this.$emit("color-changed", this.color);
+    updatecolour() {
+      this.colour = this.colourPicker.toHEXString();
+      // this.$emit("colour-changed", this.colour);
     },
-    updateColorState() {
-      this.$emit("color-changed", this.color);
+    updatecolourState() {
+      this.$emit("colour-changed", this.colour);
     },
-    checkTextColor(col) {
-      let newColorHSL = hexToHSL(col);
-      if (newColorHSL[2] > 50) {
-        this.textColor = "text-black";
+    checkTextcolour(col) {
+      let newcolourHSL = hexToHSL(col);
+      if (newcolourHSL[2] > 50) {
+        this.textcolour = "text-black";
       } else {
-        this.textColor = "text-white";
+        this.textcolour = "text-white";
       }
     },
   },
   watch: {
-    color(newColor) {
-      this.colorPicker.fromString(newColor);
-      this.checkTextColor(newColor);
+    colour(newcolour) {
+      this.colourPicker.fromString(newcolour);
+      this.checkTextcolour(newcolour);
     },
   },
 };

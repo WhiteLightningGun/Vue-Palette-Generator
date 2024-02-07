@@ -22,40 +22,27 @@ a {
   font-style: normal;
 }
 
-.bitter-regular {
-  font-family: "Bitter", serif;
-  font-optical-sizing: auto;
-  font-weight: 500;
-  font-style: normal;
-}
-
-.lora-regular {
-  font-family: "Lora", serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
 .colour-console {
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
   font-style: normal;
 }
 
-.d-flex .color-holder {
+.d-flex .colour-holder {
   display: flex;
-  align-items: center; /* aligns items vertically in the center */
-  justify-content: center; /* centers items horizontally */
-  min-width: 200px; /* adjust as needed */
+  align-items: center;
+  justify-content: center;
+  min-width: 200px;
   width: 10vw;
   height: 10vw;
   min-height: 200px;
   text-align: center;
 }
 
-.d-flex .color-result {
+.d-flex .colour-result {
   display: flex;
-  align-items: center; /* aligns items vertically in the center */
-  justify-content: center; /* centers items horizontally */
+  align-items: center;
+  justify-content: center;
   max-width: 200px;
   max-height: 200px;
   width: 17vw;

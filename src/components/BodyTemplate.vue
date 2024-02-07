@@ -7,7 +7,7 @@
         variety of swatch sets.
       </p>
     </div>
-    <ColorPicker @color-changed="handleColorChange" />
+    <colourPicker @colour-changed="handlecolourChange" />
     <div class="container text-center">
       <h3 class="mt-5">
         <i class="bi bi-caret-left" v-on:click="handleClick('left')"></i>
@@ -20,29 +20,29 @@
       class="container d-flex justify-content-center palette-holder"
       v-bind:class="animationSetting"
     >
-      <div v-for="(col, index) in colorArray" :key="index">
-        <ColourSwatch :color="col" />
+      <div v-for="(col, index) in colourArray" :key="index">
+        <ColourSwatch :colour="col" />
       </div>
     </div>
   </main>
 </template>
 
 <script>
-import ColorPicker from "./ColourPicker.vue";
+import colourPicker from "./ColourPicker.vue";
 import ColourSwatch from "./ColourSwatch.vue";
 import { ColourCalculators } from "../tools/ColourCalculators.js";
 
 export default {
   name: "BodyTemplate",
   components: {
-    ColorPicker,
+    colourPicker,
     ColourSwatch,
   },
   data() {
     return {
       // Default settings
-      color: "#000000",
-      colorArray: ["#FFFF00", "#FF0000", "#00FF00", "#0000FF", "#97C563"],
+      colour: "#000000",
+      colourArray: ["#FFFF00", "#FF0000", "#00FF00", "#0000FF", "#97C563"],
       currentPaletteName: "Atmospheric Pentad",
       paletteSetting: 0,
       animationSetting: "slide-right",
@@ -51,12 +51,12 @@ export default {
     };
   },
   methods: {
-    handleColorChange(newColor) {
-      // Update the color when the color-changed event is emitted
-      this.color = newColor;
+    handlecolourChange(newcolour) {
+      // Update the colour when the colour-changed event is emitted
+      this.colour = newcolour;
       this.currentPaletteName = this.colCalcs[this.paletteSetting].name;
-      this.colorArray =
-        this.colCalcs[this.paletteSetting].newSwatches(newColor);
+      this.colourArray =
+        this.colCalcs[this.paletteSetting].newSwatches(newcolour);
     },
     handleClick(direction) {
       this.animationSetting = "slide-left";
@@ -78,7 +78,7 @@ export default {
             }
           }
 
-          this.handleColorChange(this.color);
+          this.handlecolourChange(this.colour);
           this.animationSetting = "slide-right";
         };
 

@@ -1,12 +1,12 @@
 <template>
   <h4 class="my-5 px-1">
     <span
-      class="color-result rounded"
-      :style="{ 'background-color': color }"
+      class="colour-result rounded"
+      :style="{ 'background-color': colour }"
       id="console"
     >
-      <span class="colour-console" v-bind:class="textColor">
-        {{ color.toUpperCase() }}</span
+      <span class="colour-console" v-bind:class="textcolour">
+        {{ colour.toUpperCase() }}</span
       >
     </span>
   </h4>
@@ -19,23 +19,23 @@ export default {
   name: "ColourSwatch",
   // Your component's options go here
   props: {
-    color: {
+    colour: {
       type: String,
       required: true,
     },
   },
   data() {
     return {
-      textColor: "text-white",
+      textcolour: "text-white",
     };
   },
   watch: {
-    color(newColor) {
-      let newColorHSL = hexToHSL(newColor);
-      if (newColorHSL[2] > 50) {
-        this.textColor = "text-black";
+    colour(newcolour) {
+      let newcolourHSL = hexToHSL(newcolour);
+      if (newcolourHSL[2] > 50) {
+        this.textcolour = "text-black";
       } else {
-        this.textColor = "text-white";
+        this.textcolour = "text-white";
       }
     },
   },
