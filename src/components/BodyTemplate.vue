@@ -9,11 +9,11 @@
     </div>
     <colourPicker @colour-changed="handlecolourChange" />
     <div class="container text-center">
-      <h3 class="mt-5">
+      <h4 class="mt-5">
         <i class="bi bi-caret-left" v-on:click="handleClick('left')"></i>
         <span class="palette-text">{{ currentPaletteName }}</span>
         <i class="bi bi-caret-right" v-on:click="handleClick('right')"></i>
-      </h3>
+      </h4>
     </div>
 
     <div
@@ -130,6 +130,6 @@ export default {
 
 .palette-text {
   display: inline-block;
-  width: 20rem;
+  width: 18rem;
 }
 </style>
