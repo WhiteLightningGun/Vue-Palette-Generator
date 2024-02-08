@@ -16,4 +16,6 @@ Luminosity = z
 
 Expressing movements in this system is obviously highly intuitive and very useful for artists who think in terms of the colour wheel. It is eminently programmable.
 
+To see how I used this to generate colour palettes go to: src/tools/ColourCalculators.js
+
 The most interesting thing about this project for me personally is just how easy it is with Vue to add custom css to your components. Fancy presentation is therefore a breeze to make.
