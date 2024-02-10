@@ -4,7 +4,7 @@ I made this so that I would have an excuse to use Vue just for a change.
 
 It generates colour palettes that may be of interest for artists who are endeavouring to create a balanced colour scheme. This gave me a chance to use my mathematical modelling skills...
 
-A colour gamut can be expressed as set of locations in an abstract vector space. In this case, that's the HSL colour space, which obviously maps to the cylindrical coordinate system:
+A colour gamut can be expressed as set of locations in a vector space. In this case, that's the HSL colour space, which obviously maps to the cylindrical coordinate system:
 
 $\(r, \phi, z)$
 
