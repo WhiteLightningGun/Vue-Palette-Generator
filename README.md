@@ -10,7 +10,7 @@ $\(r, \phi, z)$
 
 Where:
 
-Saturation = r
+Saturation = r  
 Hue = $\\phi$  
 Luminosity = z
 
