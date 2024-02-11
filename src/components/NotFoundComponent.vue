@@ -13,7 +13,4 @@ export default {
 
 <style scoped>
 /* Your style code here */
-h1 {
-  color: rgb(255, 85, 227);
-}
 </style>

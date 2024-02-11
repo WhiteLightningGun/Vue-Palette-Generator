@@ -1,6 +1,6 @@
 import { hsltoRGB, hexToHSL } from "../ColourCalculators.js";
 
-function DrawColourWheel(canvasCtx, hexColour) {
+function HSLColourWheel(canvasCtx, hexColour) {
   const lightness = hexToHSL(hexColour)[2];
   const ctx = canvasCtx;
   const width = 500;
@@ -32,7 +32,46 @@ function DrawColourWheel(canvasCtx, hexColour) {
   ctx.putImageData(imageData, 0, 0);
 }
 
-export default DrawColourWheel;
+export { HSLColourWheel };
+
+function DrawPointsAndLines(canvasCtx, hexColourArray) {
+  const hslArray = hexColourArray.map(hexToHSL);
+  const drawLight = hslArray[0][2] > 50 ? 0 : 100;
+
+  for (let i = 0; i < hslArray.length - 1; i++) {
+    const r = hslArray[i][1] * 2.5; // normalises r to a circle with radius 250 pixels
+    const theta = (hslArray[i][0] - 180) * (Math.PI / 180);
+    const start = PolarCoordsToCartesian(r, theta);
+    const end = PolarCoordsToCartesian(
+      hslArray[i + 1][1] * 2.5,
+      (hslArray[i + 1][0] - 180) * (Math.PI / 180)
+    );
+    drawLineAndCircle(canvasCtx, start, end, hexColourArray[i], drawLight);
+  }
+  const lastPoint = PolarCoordsToCartesian(
+    hslArray[hslArray.length - 1][1] * 2.5,
+    (hslArray[hslArray.length - 1][0] - 180) * (Math.PI / 180)
+  );
+  drawCircle(
+    canvasCtx,
+    lastPoint[0] + 250,
+    250 - lastPoint[1],
+    6,
+    hexColourArray[hslArray.length - 1],
+    drawLight
+  );
+}
+
+function drawLineAndCircle(ctx, start, end, color, drawLight) {
+  ctx.strokeStyle = drawLight ? "#FFFFFF" : "#003300";
+  ctx.beginPath();
+  ctx.moveTo(start[0] + 250, 250 - start[1]);
+  ctx.lineTo(end[0] + 250, 250 - end[1]);
+  ctx.stroke();
+  drawCircle(ctx, start[0] + 250, 250 - start[1], 6, color, drawLight);
+}
+
+export { DrawPointsAndLines };
 
 function PolarCoordsR(x, y) {
   const r = Math.sqrt(x * x + y * y);
@@ -40,8 +79,21 @@ function PolarCoordsR(x, y) {
 }
 function PolarCoordsTheta(x, y) {
   const theta = 180 + (Math.atan2(y, x) * 180) / Math.PI;
-  //convert to degrees
   return theta;
 }
 
-// You need a function that can find the x,y coordinates of a point on the circle given a certain HSL argument
+function PolarCoordsToCartesian(r, theta) {
+  const x = r * Math.cos(theta);
+  const y = r * Math.sin(theta);
+  return [x, y];
+}
+
+function drawCircle(ctx, x, y, radius, color, drawLight = false) {
+  ctx.beginPath();
+  ctx.arc(x, y, radius, 0, 2 * Math.PI, false);
+  ctx.fillStyle = color;
+  ctx.fill();
+  ctx.lineWidth = 1;
+  ctx.strokeStyle = drawLight ? "#FFFFFF" : "#003300";
+  ctx.stroke();
+}

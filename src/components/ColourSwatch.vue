@@ -7,8 +7,13 @@
     }"
   >
     <span
-      class="colour-result rounded"
-      :style="{ 'background-color': colour }"
+      :class="{
+        'rounded colour-result-small': isSmall,
+        'rounded colour-result': !isSmall,
+      }"
+      :style="{
+        'background-color': colour,
+      }"
       id="console"
     >
       <span class="colour-console" v-bind:class="textcolour">
@@ -32,6 +37,10 @@ export default {
     swatchCount: {
       type: Number,
       default: 5,
+    },
+    isSmall: {
+      type: Boolean,
+      default: false,
     },
   },
   data() {
@@ -75,6 +84,16 @@ export default {
   max-height: 200px;
   width: 17vw;
   height: 17vw;
+  text-align: center;
+  font-size: calc(min(max(10px, 3vw), 20px));
+}
+.colour-result-small {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 17vw;
+  height: 8vw;
   text-align: center;
   font-size: calc(min(max(10px, 3vw), 20px));
 }

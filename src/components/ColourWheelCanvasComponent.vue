@@ -10,18 +10,38 @@
 </template>
 
 <script>
-import CanvasColourWheel from "../tools/canvas-tools/CanvasColourWheel.js";
+import {
+  HSLColourWheel,
+  DrawPointsAndLines,
+} from "../tools/canvas-tools/CanvasColourWheel.js";
+import { ColourCalculators } from "../tools/ColourCalculators.js";
 export default {
   name: "ColourWheelCanvasComponent",
-  props: ["colour"],
+  props: ["colour", "paletteSetting"],
+  data() {
+    return {
+      colourArray: ["#FFFF00", "#FF0000", "#00FF00", "#0000FF", "#97C563"],
+      colCalcs: ColourCalculators,
+    };
+  },
   mounted() {
     this.setupCanvas();
+    this.colourArray = this.colCalcs[this.paletteSetting].newSwatches(
+      this.colour
+    );
     this.drawColourWheel();
-    // Add more methods as needed
   },
   watch: {
-    colour(newColour) {
-      console.log(newColour);
+    colour() {
+      this.colourArray = this.colCalcs[this.paletteSetting].newSwatches(
+        this.colour
+      );
+      this.drawColourWheel();
+    },
+    paletteSetting() {
+      this.colourArray = this.colCalcs[this.paletteSetting].newSwatches(
+        this.colour
+      );
       this.drawColourWheel();
     },
   },
@@ -31,7 +51,8 @@ export default {
       this.ctx = this.canvas.getContext("2d");
     },
     drawColourWheel() {
-      CanvasColourWheel(this.ctx, this.colour);
+      HSLColourWheel(this.ctx, this.colour);
+      DrawPointsAndLines(this.ctx, this.colourArray);
     },
     // Add more methods here as needed
   },

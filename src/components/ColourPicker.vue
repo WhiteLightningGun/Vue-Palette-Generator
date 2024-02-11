@@ -49,7 +49,6 @@ export default {
       zIndex: 1000,
     });
     this.colourPicker.fromString(this.colour);
-    console.log("colour picker mounted");
   },
   created() {
     this.colour = `#${Math.floor(Math.random() * 16777215)

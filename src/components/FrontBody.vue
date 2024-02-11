@@ -41,7 +41,7 @@ export default {
   data() {
     return {
       // Default settings
-      colour: "#000000",
+      colour: "#97C563",
       colourArray: ["#FFFF00", "#FF0000", "#00FF00", "#0000FF", "#97C563"],
       currentPaletteName: "Atmospheric Pentad",
       paletteSetting: 0,
