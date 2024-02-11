@@ -2,9 +2,13 @@
   <div class="container d-flex justify-content-center">
     <h4 class="mt-5">
       <span
-        class="colour-holder rounded"
+        class="rounded"
         :style="{ 'background-color': colour }"
-        v-bind:class="textcolour"
+        v-bind:class="{
+          'colour-holder-small': isSmall,
+          'colour-holder': !isSmall,
+          [textcolour]: true,
+        }"
         ref="colourPicker"
         @click="opencolourPicker"
       >
@@ -18,6 +22,12 @@
 import { hexToHSL } from "@/tools/ColourCalculators";
 export default {
   name: "ColourPicker",
+  props: {
+    isSmall: {
+      type: Boolean,
+      default: false,
+    },
+  },
   data() {
     return {
       colour: "",
@@ -39,13 +49,14 @@ export default {
       zIndex: 1000,
     });
     this.colourPicker.fromString(this.colour);
+    console.log("colour picker mounted");
   },
   created() {
     this.colour = `#${Math.floor(Math.random() * 16777215)
       .toString(16)
       .toUpperCase()}`;
     this.updatecolourState(); //inform the parent of the initial colour
-    this.checkTextcolour(this.colour); //check the initial colour for text colour
+    this.checkTextcolour(this.colour); //check the initial colour for text colour, sets black or white accordingly
   },
   methods: {
     opencolourPicker() {
@@ -53,10 +64,10 @@ export default {
     },
     updatecolour() {
       this.colour = this.colourPicker.toHEXString();
-      // this.$emit("colour-changed", this.colour);
     },
     updatecolourState() {
       this.$emit("colour-changed", this.colour);
+      this.checkTextcolour(this.colour);
     },
     checkTextcolour(col) {
       let newcolourHSL = hexToHSL(col);
@@ -70,7 +81,7 @@ export default {
   watch: {
     colour(newcolour) {
       this.colourPicker.fromString(newcolour);
-      this.checkTextcolour(newcolour);
+      //this.checkTextcolour(newcolour);
     },
   },
 };

@@ -21,6 +21,9 @@ a {
   font-weight: 500;
   font-style: normal;
 }
+.no-decor {
+  text-decoration: none;
+}
 
 .colour-console {
   font-family: "Montserrat", sans-serif;
@@ -37,4 +40,12 @@ a {
   height: 10vw;
   min-height: 200px;
   text-align: center;
+}
+
+.d-flex .colour-holder-small {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
 }

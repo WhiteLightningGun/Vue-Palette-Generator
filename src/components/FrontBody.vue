@@ -7,7 +7,7 @@
         variety of swatch sets.
       </p>
     </div>
-    <colourPicker @colour-changed="handlecolourChange" />
+    <colourPicker @colour-changed="handlecolourChange" :isSmall="false" />
     <div class="container text-center">
       <h5 class="mt-5">
         <i class="bi bi-caret-left" v-on:click="handleClick('left')"></i>
@@ -77,7 +77,6 @@ export default {
               this.paletteSetting = this.colCalcs.length - 1;
             }
           }
-
           this.handlecolourChange(this.colour);
           this.animationSetting = "slide-right";
         };
