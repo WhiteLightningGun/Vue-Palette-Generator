@@ -1,6 +1,6 @@
 <template>
   <div class="container d-flex justify-content-center">
-    <h4 class="mt-5">
+    <h4 class="mt-3">
       <span
         class="rounded"
         :style="{ 'background-color': colour }"

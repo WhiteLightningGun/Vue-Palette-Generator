@@ -10,9 +10,15 @@
     <colourPicker @colour-changed="handlecolourChange" :isSmall="false" />
     <div class="container text-center">
       <h5 class="mt-5">
-        <i class="bi bi-caret-left" v-on:click="handleClick('left')"></i>
+        <i
+          class="bi bi-caret-left arrow-icon"
+          v-on:click="handleClick('left')"
+        ></i>
         <span class="palette-text">{{ currentPaletteName }}</span>
-        <i class="bi bi-caret-right" v-on:click="handleClick('right')"></i>
+        <i
+          class="bi bi-caret-right arrow-icon"
+          v-on:click="handleClick('right')"
+        ></i>
       </h5>
     </div>
 
