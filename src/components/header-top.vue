@@ -3,7 +3,9 @@
     <!-- Fixed navbar -->
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
       <div class="container-fluid mx-2">
-        <a class="navbar-brand open-sans-bold" href="/">All-Colours</a>
+        <router-link class="navbar-brand open-sans-bold" to="/#"
+          >All-Colours</router-link
+        >
         <button
           class="navbar-toggler"
           type="button"
