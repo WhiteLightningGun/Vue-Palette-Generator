@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <h1>NOT FOUND!!!!!</h1>
+  <div class="full-height">
+    <h1><a class="text-dark no-decor" href="/">NOT FOUND!!!!!</a></h1>
   </div>
 </template>
 
@@ -13,4 +13,10 @@ export default {
 
 <style scoped>
 /* Your style code here */
+.full-height {
+  height: 87.5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 </style>

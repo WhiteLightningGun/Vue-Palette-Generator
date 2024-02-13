@@ -18,7 +18,7 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav me-auto mb-2 mb-md-0">
             <li class="nav-item text-white">
-              <a class="nav-item text-white no-decor" href="/about"
+              <a class="nav-item text-white no-decor" href="/more"
                 >Learn More</a
               >
             </li>

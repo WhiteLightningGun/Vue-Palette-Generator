@@ -2,9 +2,14 @@
   <main class="flex-shrink-0 main">
     <div class="container text-center">
       <h3 class="mt-5">How it works</h3>
-      <p>
+      <p class="mx-2">
         A visual demonstration of how palettes are generated using the HSL
         colour model.
+      </p>
+      <p class="mx-2">
+        A palette can be derived from any selected first colour by moving over
+        the colour space in a set pattern according to radius, angle, and
+        lightness.
       </p>
     </div>
     <colourPicker @colour-changed="handleColourChange" :isSmall="true" />
@@ -23,7 +28,7 @@
         ></i>
       </h5>
     </div>
-    <div class="container text-center">
+    <div class="container text-center mb-2">
       <h3 class="mt-5"></h3>
       <ColourWheelCanvasComponent
         :colour="colour"
@@ -38,7 +43,7 @@ import colourPicker from "./ColourPicker.vue";
 import ColourWheelCanvasComponent from "./ColourWheelCanvasComponent.vue";
 import { ColourCalculators } from "../tools/ColourCalculators.js";
 export default {
-  name: "AboutPage",
+  name: "MorePage",
   // Your script code here
   components: {
     colourPicker,

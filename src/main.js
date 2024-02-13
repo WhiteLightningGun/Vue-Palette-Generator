@@ -5,14 +5,14 @@ import "@/assets/css/extra_styles.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
 // Import the components you want to route to
-import AboutComponent from "./components/AboutComponent.vue";
+import MoreComponent from "./components/MoreComponent.vue";
 import BodyTemplate from "./components/FrontBody.vue";
 import NotFoundComponent from "./components/NotFoundComponent.vue";
 
 // Define routes
 const routes = [
   { path: "/", component: BodyTemplate },
-  { path: "/about", component: AboutComponent },
+  { path: "/more", component: MoreComponent },
   { path: "/:catchAll(.*)", component: NotFoundComponent },
 ];
 

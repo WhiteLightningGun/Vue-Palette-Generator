@@ -30,6 +30,9 @@
         <ColourSwatch :colour="col" :swatchCount="colourArray.length" />
       </div>
     </div>
+    <div class="container text-center mt-1">
+      <p>Click a colour swatch to copy the colour to your clipboard.</p>
+    </div>
   </main>
 </template>
 
