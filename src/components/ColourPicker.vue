@@ -32,6 +32,7 @@ export default {
     return {
       colour: "",
       textcolour: "text-white",
+      isMounted: false,
     };
   },
   mounted() {
@@ -49,6 +50,7 @@ export default {
       zIndex: 1000,
     });
     this.colourPicker.fromString(this.colour);
+    this.isMounted = true;
   },
   created() {
     this.colour = `#${Math.floor(Math.random() * 16777215)
@@ -79,7 +81,7 @@ export default {
   },
   watch: {
     colour(newcolour) {
-      this.colourPicker.fromString(newcolour);
+      this.isMounted ? this.colourPicker.fromString(newcolour) : null;
       //this.checkTextcolour(newcolour);
     },
   },

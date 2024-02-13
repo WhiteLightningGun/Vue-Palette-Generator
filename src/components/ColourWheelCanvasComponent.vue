@@ -22,6 +22,7 @@ export default {
     return {
       colourArray: ["#FFFF00", "#FF0000", "#00FF00", "#0000FF", "#97C563"],
       colCalcs: ColourCalculators,
+      isMounted: false,
     };
   },
   mounted() {
@@ -30,19 +31,20 @@ export default {
       this.colour
     );
     this.drawColourWheel();
+    this.isMounted = true;
   },
   watch: {
     colour() {
       this.colourArray = this.colCalcs[this.paletteSetting].newSwatches(
         this.colour
       );
-      this.drawColourWheel();
+      this.isMounted ? this.drawColourWheel() : null;
     },
     paletteSetting() {
       this.colourArray = this.colCalcs[this.paletteSetting].newSwatches(
         this.colour
       );
-      this.drawColourWheel();
+      this.isMounted ? this.drawColourWheel() : null;
     },
   },
   methods: {
