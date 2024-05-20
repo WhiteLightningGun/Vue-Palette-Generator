@@ -15,7 +15,7 @@ function HSLColourWheel(canvasCtx, hexColour) {
     let x = (pixelIndex % width) - halfWidth;
     let y = halfWidth - Math.floor(pixelIndex / width);
 
-    let r = PolarCoordsR(x, y) * 0.4; //normalises r to 0-100
+    let r = PolarCoordsR(x, y) * 0.4; // *0.4 normalises r to 0-100
     let theta = PolarCoordsTheta(x, y);
 
     // Modify pixel data
@@ -73,10 +73,23 @@ function drawLineAndCircle(ctx, start, end, color, drawLight) {
 
 export { DrawPointsAndLines };
 
+/**
+ *
+ * @param {number} x
+ * @param {number} y
+ * @returns {number}
+ */
+
 function PolarCoordsR(x, y) {
   const r = Math.sqrt(x * x + y * y);
   return r;
 }
+/**
+ *
+ * @param {number} x - integer coordinate
+ * @param {number} y - integer coordinate
+ * @returns {number} angle in degrees
+ */
 function PolarCoordsTheta(x, y) {
   const theta = 180 + (Math.atan2(y, x) * 180) / Math.PI;
   return theta;

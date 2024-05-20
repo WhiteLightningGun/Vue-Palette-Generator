@@ -10,15 +10,17 @@
     <colourPicker @colour-changed="handlecolourChange" :isSmall="false" />
     <div class="container text-center">
       <h5 class="mt-5">
-        <i
-          class="bi bi-caret-left arrow-icon"
-          v-on:click="handleClick('left')"
-        ></i>
-        <span class="palette-text">{{ currentPaletteName }}</span>
-        <i
-          class="bi bi-caret-right arrow-icon"
-          v-on:click="handleClick('right')"
-        ></i>
+        <div class="d-flex justify-content-center align-items-center mx-auto">
+          <i
+            class="bi bi-caret-left arrow-icon fs-2"
+            v-on:click="handleClick('left')"
+          ></i>
+          <span class="palette-text">{{ currentPaletteName }}</span>
+          <i
+            class="bi bi-caret-right arrow-icon fs-2"
+            v-on:click="handleClick('right')"
+          ></i>
+        </div>
       </h5>
     </div>
 

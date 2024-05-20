@@ -56,7 +56,6 @@ export default {
       HSLColourWheel(this.ctx, this.colour);
       DrawPointsAndLines(this.ctx, this.colourArray);
     },
-    // Add more methods here as needed
   },
 };
 </script>

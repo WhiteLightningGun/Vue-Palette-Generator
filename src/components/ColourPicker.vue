@@ -53,9 +53,7 @@ export default {
     this.isMounted = true;
   },
   created() {
-    this.colour = `#${Math.floor(Math.random() * 16777215)
-      .toString(16)
-      .toUpperCase()}`;
+    this.colour = "#F45113";
     this.updatecolourState(); //inform the parent of the initial colour
     this.checkTextcolour(this.colour); //check the initial colour for text colour, sets black or white accordingly
   },

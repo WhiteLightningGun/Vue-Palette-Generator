@@ -24,11 +24,6 @@
                 >Learn More</router-link
               >
             </li>
-            <!--
-              <li class="nav-item">
-                <a class="nav-link disabled">Disabled</a>
-              </li>
-              -->
           </ul>
 
           <div class="ml-lg-auto">
